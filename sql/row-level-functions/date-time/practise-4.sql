@@ -1,17 +1,12 @@
 -- Use {TableName} to refer to the table name in the SQL query. For example:
 use SalesDB;
 
--- Question: Show all orders that were placed during the month of February.
-SELECT
-   *
-FROM Sales.Orders
-WHERE MONTH(OrderDate) = 2;
-
-
 -- Question: Show creation time date in different formats
 SELECT
 OrderID,
 CreationTime,
+FORMAT(CreationTime, 'MM-dd-yyyy') AS USA_format,
+FORMAT(CreationTime, 'dd-MM-yyyy') AS EURO_format,
 FORMAT(CreationTime, 'dd') AS dd,
 FORMAT(CreationTime, 'ddd') AS ddd,
 FORMAT(CreationTime, 'dddd') AS dddd,
